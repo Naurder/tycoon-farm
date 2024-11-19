@@ -245,7 +245,6 @@ text = "Shop"
 layout_mode = 2
 
 [node name="ChickenEntry" type="HBoxContainer" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList"]
-visible = false
 layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/ChickenEntry"]
@@ -266,7 +265,6 @@ layout_mode = 2
 script = ExtResource("3_ir7x5")
 
 [node name="CowEntry" type="HBoxContainer" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList"]
-visible = false
 layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/CowEntry"]
@@ -288,6 +286,7 @@ script = ExtResource("3_ir7x5")
 script = ExtResource("4_40bb0")
 
 [node name="ClickingArea" type="Area2D" parent="."]
+visible = false
 script = ExtResource("2_o11o7")
 
 [node name="ClickableArea" type="CollisionShape2D" parent="ClickingArea"]
@@ -295,8 +294,6 @@ position = Vector2(361, 731.5)
 shape = SubResource("RectangleShape2D_5x0qf")
 
 [connection signal="toggled" from="UI/Banner/StoreButton/ShopButton" to="UI/CanvasLayer/ShopPanel" method="_on_shop_button_toggled"]
-[connection signal="money_updated" from="UI/CanvasLayer/ShopPanel" to="GameManager" method="_on_shop_panel_money_updated"]
 [connection signal="money_updated" from="GameManager" to="UI/Banner/TrainButton/MoneyLabel" method="_on_game_manager_money_updated"]
-[connection signal="money_updated" from="GameManager" to="UI/CanvasLayer/ShopPanel" method="_on_game_manager_money_updated"]
 [connection signal="input_event" from="ClickingArea" to="ClickingArea" method="_on_input_event"]
 [connection signal="money_earned" from="ClickingArea" to="GameManager" method="_on_clicking_area_money_earned"]

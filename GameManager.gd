@@ -5,19 +5,25 @@ signal money_updated(new_amount)  # Declare the signal
 
 func _ready():
 	load_money()  # Load money when the game starts
-	update_money_display()
+	emit_signal("money_updated", dollars)  # Emit signal to update money
 
 func _exit_tree():
 	save_money()  # Save money when the game ends or scene changes
-	
-# Save money to file
+
+
+
+# Saves money
 func save_money():
-	var file = FileAccess.open("res://save_data/save_file.dat", FileAccess.WRITE)  # Open the file for writing
+	print("Save_money")
+	var file = FileAccess.open("res://save_data/save_file.dat", FileAccess.WRITE)  # Use user:// path to save in a portable location
 	if file:
 		file.store_var(dollars)
 		file.close()
+		print("Money saved: " + str(dollars))  # Debugging line
+	else:
+		print("Failed to save money!")  # Debugging line
 
-# Load money from file
+# Loads money
 func load_money():
 	var file = FileAccess.open("res://save_data/save_file.dat", FileAccess.READ)  # Open the file for reading
 	if file:
@@ -26,11 +32,18 @@ func load_money():
 	else:
 		print("No save file found or failed to load.")
 
-func _on_clicking_area_money_earned(amount: Variant) -> void:
-	dollars+= amount
-	print(dollars)
-	update_money_display()
-
-# Function to update the money displayed on the label
-func update_money_display():
+# Updates money
+func update_money(amountGained: Variant):
+	dollars+= amountGained
 	emit_signal("money_updated", dollars)  # Emit signal to update money
+
+
+
+#signal from ClickingArea which gives us 1$
+func _on_clicking_area_money_earned(amount: Variant) -> void:
+	update_money(amount)
+	print("Gained: $", amount)
+
+
+func _on_shop_panel_money_updated(new_amount: Variant) -> void:
+	update_money(new_amount)
