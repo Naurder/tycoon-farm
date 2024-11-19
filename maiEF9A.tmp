@@ -1,0 +1,171 @@
+[gd_scene load_steps=7 format=4 uid="uid://cybf3e0y2shum"]
+
+[ext_resource type="Texture2D" uid="uid://bvru2xmp4o5uk" path="res://art/1000_F_404014988_7N8rNOa9ezLOZx6O6JEscLyNCpLLZhGW.jpg" id="1_c78b0"]
+[ext_resource type="Texture2D" uid="uid://bls7vx4kbemho" path="res://art/Sheets/Fence.png" id="2_0bxk8"]
+[ext_resource type="Script" path="res://addons/animatedbutton/AnimatedButton.gd" id="3_ir7x5"]
+[ext_resource type="Script" path="res://GameManager.gd" id="4_40bb0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_672do"]
+texture = ExtResource("2_0bxk8")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+1:2/0 = 0
+6:2/0 = 0
+1:3/0 = 0
+6:3/0 = 0
+1:4/0 = 0
+6:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u4gpo"]
+sources/0 = SubResource("TileSetAtlasSource_672do")
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+visible = false
+
+[node name="Grass" type="ColorRect" parent="Background"]
+offset_right = 720.0
+offset_bottom = 1280.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0.196078, 0.803922, 0.196078, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Background/Grass"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 720.0
+texture = ExtResource("1_c78b0")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background/Grass"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -720.0
+offset_top = -727.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(720, 720)
+texture = ExtResource("1_c78b0")
+expand_mode = 4
+
+[node name="Fences" type="Node2D" parent="Background"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Background/Fences"]
+texture_filter = 1
+position = Vector2(25, 15)
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAAAAAwAAAACAAsAAAABAAwAAAADAAsAAAACAAwAAAADAAsAAAADAAwAAAADAAsAAAAEAAwAAAADAAsAAAAFAAwAAAADAAsAAAAGAAwAAAAFAAsAAAAAAAsAAAAGAAkAAAAAAAoAAAAGAAsAAAAAAAkAAAAGAAsAAAAAAAgAAAAGAAsAAAAAAAcAAAAGAAsAAAAAAAYAAAAGAAsAAAAAAAUAAAAGAAsAAAAAAAQAAAAGAAsAAAAAAAMAAAAGAAsAAAAGAAsAAAAHAAsAAAAGAAoAAAAHAAsAAAAGAAkAAAAHAAsAAAAGAAgAAAAHAAsAAAAGAAcAAAAHAAsAAAAGAAYAAAAHAAsAAAAGAAUAAAAHAAsAAAAGAAQAAAAHAAsAAAAGAAMAAAAHAAsAAAABAAIAAAADAAoAAAACAAIAAAADAAoAAAADAAIAAAADAAoAAAAEAAIAAAADAAoAAAAFAAIAAAADAAoAAAAAAAIAAAACAAoAAAAGAAIAAAAFAAoAAAA=")
+tile_set = SubResource("TileSet_u4gpo")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Banner" type="Node2D" parent="UI"]
+
+[node name="ColorBack" type="ColorRect" parent="UI/Banner"]
+offset_right = 718.0
+offset_bottom = 121.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorInside" type="ColorRect" parent="UI/Banner"]
+offset_left = 15.0
+offset_right = 781.0
+offset_bottom = 121.0
+scale = Vector2(0.9, 0.9)
+color = Color(0, 0.756863, 0.784314, 1)
+
+[node name="StoreButton" type="Node2D" parent="UI/Banner"]
+
+[node name="AnimatedButton" type="Button" parent="UI/Banner/StoreButton"]
+offset_left = 39.0
+offset_top = 22.0
+offset_right = 226.0
+offset_bottom = 92.0
+text = "Store
+"
+script = ExtResource("3_ir7x5")
+
+[node name="TrainButton" type="Node2D" parent="UI/Banner"]
+
+[node name="Label" type="Label" parent="UI/Banner/TrainButton"]
+offset_left = 241.0
+offset_top = 8.0
+offset_right = 491.0
+offset_bottom = 105.0
+text = "0"
+
+[node name="CoinCount" type="Node2D" parent="UI/Banner"]
+
+[node name="AnimatedButton" type="Button" parent="UI/Banner/CoinCount"]
+offset_left = 500.0
+offset_top = 22.0
+offset_right = 687.0
+offset_bottom = 92.0
+text = "Train"
+script = ExtResource("3_ir7x5")
+
+[node name="StorePage" type="Node2D" parent="UI"]
+
+[node name="Panel" type="Panel" parent="UI/StorePage"]
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="ClickArea" type="Node2D" parent="UI"]
+
+[node name="AnimatedButton" type="Button" parent="UI/ClickArea"]
+offset_top = 121.0
+offset_right = 720.0
+offset_bottom = 1280.0
+script = ExtResource("3_ir7x5")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("4_40bb0")

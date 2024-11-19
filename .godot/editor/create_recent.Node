@@ -1,0 +1,10 @@
+Area2D
+CollisionShape2D
+Node2D
+Node
+AnimatedButton
+Label
+Panel
+ColorRect
+TileMapLayer
+TextureRect
