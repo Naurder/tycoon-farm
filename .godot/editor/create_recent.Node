@@ -1,3 +1,7 @@
+Timer
+Sprite2D
+Node2D
+AnimatedSprite2D
 VBoxContainer
 AnimatedButton
 Label
@@ -8,7 +12,4 @@ CanvasLayer
 TileMapLayer
 Area2D
 CollisionShape2D
-Node2D
 Node
-Panel
-ColorRect

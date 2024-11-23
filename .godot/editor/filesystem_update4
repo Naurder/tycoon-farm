@@ -1,3 +1,8 @@
 res://main_scene.tscn
-res://ShopPanel.gd
 res://GameManager.gd
+res://art/Sheets/Animals.tres
+res://ShopPanel.gd
+res://animals/Chicken.tres
+res://README.md
+res://AnimalSpawner.gd
+res://clicking_area.gd
