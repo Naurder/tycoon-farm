@@ -289,9 +289,6 @@ script = ExtResource("3_ir7x5")
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("4_40bb0")
 
-[node name="Timer" type="Timer" parent="GameManager"]
-autostart = true
-
 [node name="ClickingArea" type="Area2D" parent="."]
 script = ExtResource("2_o11o7")
 
@@ -312,7 +309,6 @@ texture = ExtResource("11_6g56e")
 [connection signal="money_updated" from="UI/CanvasLayer/ShopPanel" to="AnimalSpawner" method="_on_shop_panel_money_updated"]
 [connection signal="money_updated" from="GameManager" to="UI/Banner/TrainButton/MoneyLabel" method="_on_game_manager_money_updated"]
 [connection signal="money_updated" from="GameManager" to="UI/CanvasLayer/ShopPanel" method="_on_game_manager_money_updated"]
-[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="input_event" from="ClickingArea" to="ClickingArea" method="_on_input_event"]
 [connection signal="money_earned" from="ClickingArea" to="GameManager" method="_on_clicking_area_money_earned"]
 [connection signal="passive_income_increased" from="AnimalSpawner" to="GameManager" method="_on_animal_spawner_passive_income_increased"]

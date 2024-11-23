@@ -2,17 +2,16 @@ extends PanelContainer
 
 # Data for animals in the shop
 var animals = [
-	{ "name": "Chicken", "cost": 50, "icon": preload("res://art/chicken_icon.svg") },
+	{ "name": "Chicken", "cost": 50, "icon": preload("res://animals/Chicken.tres") },
 	{ "name": "Chicken", "cost": 50, "icon": preload("res://art/chicken_icon.svg") }
 	#{ "name": "Cow", "cost": 200, "icon": preload("res://cow_icon.png") }
 ]
 
-signal money_updated(new_amount)
+signal money_updated(new_amount, animalName)
 
 var money = 0  # Reference player's money (update from main game)
 
-# Called when the node enters the scene tree
-func _ready():
+func _ready():	#entry
 	populate_shop()
 	self.visible = false
 
@@ -41,7 +40,7 @@ func populate_shop():
 		cost_label.text = "$" + str(animal["cost"])
 		entry.add_child(cost_label)
 
-		# Add buy button
+		# Add buy button -> for buying animal
 		var buy_button = Button.new()
 		buy_button.text = "Buy"
 		buy_button.connect("pressed", _on_buy_pressed.bind(animal))
@@ -52,11 +51,11 @@ func populate_shop():
 		# Add the entry to the animal list
 		animal_list.add_child(entry)
 
-# Handle buy button presses
+# Handle buy button presses populate_shop()
 func _on_buy_pressed(animal):
 	if money >= animal["cost"]:
-		emit_signal("money_updated", -animal["cost"])
-		add_animal_to_inventory(animal)
+		emit_signal("money_updated", -animal["cost"], animal["name"])		#informs GameManager.gd that money's reduced
+		#add_animal_to_inventory(animal)
 	else:
 		print("Not enough money!")
 		print(money)
