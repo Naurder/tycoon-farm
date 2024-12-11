@@ -1,6 +1,5 @@
 extends Node2D
 
-signal passive_income_increased(income_amount)
 
 var sprite_sheet = preload("res://art/Sheets/FarmAnimals.png")
 var animal_regions = {
@@ -134,9 +133,6 @@ func spawn_animal(animal_name: String) -> void:
 		if animal_count.has(animal_type):
 			animal_count[animal_type] += 1
 
-			# Emit income increase to GameManager
-			var income_increase = income_per_animal.get(animal_type, 0)
-			emit_signal("passive_income_increased", income_increase)
 	else:
 		print("Unknown animal: ", animal_name)
 
@@ -145,5 +141,5 @@ func spawn_animal(animal_name: String) -> void:
 
 ############################### received signals ###########################################################
 #Shop panel tells buy button pressed
-func _on_shop_panel_money_updated(new_amount: Variant, animalName: Variant) -> void:
-	spawn_animal("Chicken_1")
+func _on_shop_panel_money_updated(new_amount: Variant, animal_ID: Variant, passive_Income: Variant) -> void:
+	spawn_animal(animal_ID)

@@ -315,4 +315,3 @@ texture = ExtResource("11_6g56e")
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="input_event" from="ClickingArea" to="ClickingArea" method="_on_input_event"]
 [connection signal="money_earned" from="ClickingArea" to="GameManager" method="_on_clicking_area_money_earned"]
-[connection signal="passive_income_increased" from="AnimalSpawner" to="GameManager" method="_on_animal_spawner_passive_income_increased"]
