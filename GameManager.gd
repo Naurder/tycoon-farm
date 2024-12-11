@@ -52,15 +52,13 @@ func _on_clicking_area_money_earned(amount: Variant) -> void:
 
 
 #signal from ShopPanel.gd		bough animal, money reduced
-func _on_shop_panel_money_updated(new_amount: Variant, animalName: Variant) -> void:
+func _on_shop_panel_money_updated(new_amount: Variant, animal_ID: Variant, passive_Income: Variant) -> void:
 	update_money(new_amount)
-	#print(animalName)
+	passive_income += passive_Income
+	
 
-#signal from AnimalSpawner.gd
-func _on_animal_spawner_passive_income_increased(income_amount: Variant) -> void:
-	passive_income+=income_amount
 
-#calls it every second to update passive income
+#call 1/s     to update passive income
 func _on_timer_timeout() -> void:
-	print("one second elapsed and this is passive income", passive_income)
+	#print("one second elapsed and this is passive income", passive_income)
 	update_money(passive_income)
