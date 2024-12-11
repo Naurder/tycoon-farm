@@ -1,3 +1,5 @@
+ScrollContainer
+VScrollBar
 Timer
 Sprite2D
 Node2D
@@ -11,5 +13,3 @@ PanelContainer
 CanvasLayer
 TileMapLayer
 Area2D
-CollisionShape2D
-Node

@@ -234,55 +234,58 @@ offset_right = 678.0
 offset_bottom = 1235.0
 script = ExtResource("6_t58lw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/ShopPanel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/CanvasLayer/ShopPanel"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UI/CanvasLayer/ShopPanel/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/ShopPanel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 48
 text = "Shop"
 
-[node name="AnimalList" type="VBoxContainer" parent="UI/CanvasLayer/ShopPanel/VBoxContainer"]
+[node name="AnimalList" type="VBoxContainer" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ChickenEntry" type="HBoxContainer" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList"]
+[node name="ChickenEntry" type="HBoxContainer" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList"]
 visible = false
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/ChickenEntry"]
+[node name="Icon" type="TextureRect" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/ChickenEntry"]
 layout_mode = 2
 texture = ExtResource("7_7y5ww")
 expand_mode = 2
 
-[node name="NameLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/ChickenEntry"]
+[node name="NameLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/ChickenEntry"]
 layout_mode = 2
 text = "Chicken"
 
-[node name="CostLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/ChickenEntry"]
+[node name="CostLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/ChickenEntry"]
 layout_mode = 2
 text = "$50"
 
-[node name="AnimatedButton" type="Button" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/ChickenEntry"]
+[node name="AnimatedButton" type="Button" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/ChickenEntry"]
 layout_mode = 2
 script = ExtResource("3_ir7x5")
 
-[node name="CowEntry" type="HBoxContainer" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList"]
+[node name="CowEntry" type="HBoxContainer" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList"]
 visible = false
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/CowEntry"]
+[node name="Icon" type="TextureRect" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/CowEntry"]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/CowEntry"]
+[node name="NameLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/CowEntry"]
 layout_mode = 2
 text = "Cow"
 
-[node name="CostLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/CowEntry"]
+[node name="CostLabel" type="Label" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/CowEntry"]
 layout_mode = 2
 text = "$250"
 
-[node name="AnimatedButton" type="Button" parent="UI/CanvasLayer/ShopPanel/VBoxContainer/AnimalList/CowEntry"]
+[node name="AnimatedButton" type="Button" parent="UI/CanvasLayer/ShopPanel/ScrollContainer/VBoxContainer/AnimalList/CowEntry"]
 layout_mode = 2
 script = ExtResource("3_ir7x5")
 

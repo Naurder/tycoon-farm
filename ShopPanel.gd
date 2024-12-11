@@ -2,7 +2,7 @@ extends PanelContainer
 
 # Data for animals in the shop
 
-var animal_icons = generate_icons()
+var animal_icons = generate_icons()				#it is dictionary that contains all of 
 var animals = [
 	{ "animal_ID": "Cow_1", "cost": 50, "icon": animal_icons["Cow_1"], "passive_income": 5 },
 	{ "animal_ID": "Cow_2", "cost": 55, "icon": animal_icons["Cow_2"], "passive_income": 6 },
@@ -71,7 +71,7 @@ func _ready():	#entry
 
 # Populate the shop UI
 func populate_shop():
-	var animal_list = $VBoxContainer/AnimalList
+	var animal_list = $ScrollContainer/VBoxContainer/AnimalList
 	for animal in animals:
 		# Create a new HBoxContainer for each animal
 		var entry = HBoxContainer.new()
@@ -187,8 +187,8 @@ func generate_icons() -> Dictionary:
 	
 	return icons
 
-# Handle buy button presses populate_shop()
-func _on_buy_pressed(animal):
+
+func _on_buy_pressed(animal): 			# Handle BUY button presses
 	if money >= animal["cost"]:
 		emit_signal("money_updated", -animal["cost"], animal["animal_ID"], animal["passive_income"])		#informs GameManager.gd that money's reduced
 		#print(animal["name"])
@@ -197,7 +197,7 @@ func _on_buy_pressed(animal):
 		print("Not enough money!")
 		print(money)
 
-# Add purchased animal to the player's inventory
+# Add purchased animal to the player's inventory			#currently ain't has implementation
 func add_animal_to_inventory(animal):
 	print("Purchased: " + animal["name"])
 	# Implement your logic to add the animal to the game (e.g., increase passive income)
