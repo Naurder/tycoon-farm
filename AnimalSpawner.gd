@@ -1,6 +1,8 @@
 extends Node2D
 
 
+var spawn_area = Rect2(Vector2(100, 250), Vector2(500, 950))	#Rect2 = Position && Size
+
 var sprite_sheet = preload("res://art/Sheets/FarmAnimals.png")
 var animal_regions = {
 	# Row 1: Cows
@@ -106,19 +108,21 @@ func _ready() -> void:	#entry
 func _process(delta: float) -> void:	#Called every frame. 'delta' is the elapsed time since the previous frame.
 	pass
 
-
+func _input(event):
+	# Mouse in viewport coordinates.
+	if event is InputEventMouseButton:
+		print("Mouse Click/Unclick at: ", event.position)
 
 
 func spawn_animal(animal_name: String) -> void:
 	if animal_regions.has(animal_name):
 		
-		
 		var animal_sprite = Sprite2D.new()							#create Animal Sprite2D
 		animal_sprite.texture = sprite_sheet						#assign map of animals
 		animal_sprite.region_enabled = true							#active region cut
 		animal_sprite.region_rect = animal_regions[animal_name]		#cut the right animal from map
-		var random_x = randi() % 720
-		var random_y = randi() % 1280
+		var random_x = randf_range(spawn_area.position.x, spawn_area.position.x + spawn_area.size.x)
+		var random_y = randf_range(spawn_area.position.y, spawn_area.position.y + spawn_area.size.y)
 		animal_sprite.position = Vector2(random_x, random_y)				#spawn
 		animal_sprite.scale = Vector2(2, 2)
 		add_child(animal_sprite)									# Add it to the scene
@@ -136,7 +140,10 @@ func spawn_animal(animal_name: String) -> void:
 	else:
 		print("Unknown animal: ", animal_name)
 
-
+func set_spawn_area(new_position: Vector2, new_size: Vector2) -> void:
+	spawn_area.position = new_position
+	spawn_area.size = new_size
+	print("Updated spawn area to: ", spawn_area)
 
 
 ############################### received signals ###########################################################
