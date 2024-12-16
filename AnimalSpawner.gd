@@ -6,68 +6,68 @@ var spawn_area = Rect2(Vector2(100, 250), Vector2(500, 950))	#Rect2 = Position &
 var sprite_sheet = preload("res://art/Sheets/FarmAnimals.png")
 var animal_regions = {
 	# Row 1: Cows
-	"Cow_1": Rect2(0, 0, 32, 32),
-	"Cow_2": Rect2(32, 0, 32, 32),
-	"Cow_3": Rect2(64, 0, 32, 32),
-	"Cow_4": Rect2(96, 0, 32, 32),
-	"Cow_5": Rect2(128, 0, 32, 32),
-	"Cow_6": Rect2(160, 0, 32, 32),
+	"Cow_1": Rect2(0, 0, 31, 31),
+	"Cow_2": Rect2(32, 0, 31, 31),
+	"Cow_3": Rect2(64, 0, 31, 31),
+	"Cow_4": Rect2(96, 0, 31, 31),
+	"Cow_5": Rect2(128, 0, 31, 31),
+	"Cow_6": Rect2(160, 0, 31, 31),
 
 	# Row 2: Horses
-	"Horse_1": Rect2(0, 32, 32, 32),
-	"Horse_2": Rect2(32, 32, 32, 32),
-	"Horse_3": Rect2(64, 32, 32, 32),
-	"Horse_4": Rect2(96, 32, 32, 32),
-	"Horse_5": Rect2(128, 32, 32, 32),
-	"Horse_6": Rect2(160, 32, 32, 32),
+	"Horse_1": Rect2(1, 32, 31, 31),
+	"Horse_2": Rect2(33, 32, 31, 31),
+	"Horse_3": Rect2(65, 32, 31, 31),
+	"Horse_4": Rect2(97, 32, 31, 31),
+	"Horse_5": Rect2(129, 32, 31, 31),
+	"Horse_6": Rect2(161, 32, 31, 31),
 
 	# Row 3: Pigs and Llamas
-	"Pig_1": Rect2(0, 64, 32, 32),
-	"Pig_2": Rect2(32, 64, 32, 32),
-	"Pig_3": Rect2(64, 64, 32, 32),
-	"Llama_1": Rect2(96, 64, 32, 32),
-	"Llama_2": Rect2(128, 64, 32, 32),
-	"Llama_3": Rect2(160, 64, 32, 32),
+	"Pig_1": Rect2(0, 64, 31, 31),
+	"Pig_2": Rect2(32, 64, 31, 31),
+	"Pig_3": Rect2(64, 64, 31, 31),
+	"Llama_1": Rect2(96, 64, 31, 31),
+	"Llama_2": Rect2(128, 64, 31, 31),
+	"Llama_3": Rect2(160, 64, 31, 31),
 
 	# Row 4: Goats and Sheep
-	"Goat_1": Rect2(0, 96, 32, 32),
-	"Goat_2": Rect2(32, 96, 32, 32),
-	"Goat_3": Rect2(64, 96, 32, 32),
-	"Sheep_1": Rect2(96, 96, 32, 32),
-	"Sheep_2": Rect2(128, 96, 32, 32),
-	"Sheep_3": Rect2(160, 96, 32, 32),
+	"Goat_1": Rect2(0, 96, 31, 31),
+	"Goat_2": Rect2(32, 96, 31, 31),
+	"Goat_3": Rect2(64, 96, 31, 31),
+	"Sheep_1": Rect2(96, 96, 31, 31),
+	"Sheep_2": Rect2(128, 96, 31, 31),
+	"Sheep_3": Rect2(160, 96, 31, 31),
 
 	# Row 5: Donkeys and Rabbits
-	"Donkey_1": Rect2(0, 128, 32, 32),
-	"Donkey_2": Rect2(32, 128, 32, 32),
-	"Rabbit_1": Rect2(64, 128, 32, 32),
-	"Rabbit_2": Rect2(96, 128, 32, 32),
-	"Rabbit_3": Rect2(128, 128, 32, 32),
-	"Rabbit_4": Rect2(160, 128, 32, 32),
+	"Donkey_1": Rect2(1, 128, 31, 31),
+	"Donkey_2": Rect2(33, 128, 31, 31),
+	"Rabbit_1": Rect2(65, 128, 31, 31),
+	"Rabbit_2": Rect2(97, 128, 31, 31),
+	"Rabbit_3": Rect2(129, 128, 31, 31),
+	"Rabbit_4": Rect2(161, 128, 31, 31),
 
 	# Row 6: Ducks and Geese
-	"Duck_1": Rect2(0, 160, 32, 32),
-	"Duck_2": Rect2(32, 160, 32, 32),
-	"Duck_3": Rect2(64, 160, 32, 32),
-	"Duck_4": Rect2(96, 160, 32, 32),
-	"Goose_1": Rect2(128, 160, 32, 32),
-	"Goose_2": Rect2(160, 160, 32, 32),
+	"Duck_1": Rect2(0, 160, 31, 31),
+	"Duck_2": Rect2(32, 160, 31, 31),
+	"Duck_3": Rect2(64, 160, 31, 31),
+	"Duck_4": Rect2(96, 160, 31, 31),
+	"Goose_1": Rect2(128, 160, 31, 31),
+	"Goose_2": Rect2(160, 160, 31, 31),
 
 	# Row 7: Chickens
-	"Chicken_1": Rect2(0, 192, 32, 32),
-	"Chicken_2": Rect2(32, 192, 32, 32),
-	"Chicken_3": Rect2(64, 192, 32, 32),
-	"Chicken_4": Rect2(96, 192, 32, 32),
-	"Chicken_5": Rect2(128, 192, 32, 32),
-	"Chicken_6": Rect2(160, 192, 32, 32),
+	"Chicken_1": Rect2(0, 192, 31, 31),
+	"Chicken_2": Rect2(32, 192, 31, 31),
+	"Chicken_3": Rect2(64, 192, 31, 31),
+	"Chicken_4": Rect2(96, 192, 31, 31),
+	"Chicken_5": Rect2(128, 192, 31, 31),
+	"Chicken_6": Rect2(160, 192, 31, 31),
 
 	# Row 8: Chicks
-	"Chick_1": Rect2(0, 224, 32, 32),
-	"Chick_2": Rect2(32, 224, 32, 32),
-	"Chick_3": Rect2(64, 224, 32, 32),
-	"Chick_4": Rect2(96, 224, 32, 32),
-	"Chick_5": Rect2(128, 224, 32, 32),
-	"Chick_6": Rect2(160, 224, 32, 32)
+	"Chick_1": Rect2(0, 224, 31, 31),
+	"Chick_2": Rect2(32, 224, 31, 31),
+	"Chick_3": Rect2(64, 224, 31, 31),
+	"Chick_4": Rect2(96, 224, 31, 31),
+	"Chick_5": Rect2(128, 224, 31, 31),
+	"Chick_6": Rect2(160, 224, 31, 31)
 }
 var last_spawn_position = Vector2(320, 640)
 
@@ -108,10 +108,10 @@ func _ready() -> void:	#entry
 func _process(delta: float) -> void:	#Called every frame. 'delta' is the elapsed time since the previous frame.
 	pass
 
-func _input(event):
-	# Mouse in viewport coordinates.
-	if event is InputEventMouseButton:
-		print("Mouse Click/Unclick at: ", event.position)
+
+
+
+
 
 
 func spawn_animal(animal_name: String) -> void:
