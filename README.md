@@ -1,5 +1,24 @@
 # Tycoon Farm Clicker Game
 
+### Requirements:
+  
+ 
+ <a href="https://godotengine.org" target="_blank"><img src="https://godotengine.org/assets/press/logo_large_color_dark.png" alt="Godot Engine Icon" height="50"></a>
+This project is not yet a compiled executable and requires the **Godot Engine 4.3+** to run and develop.
+
+
+### How to Set Up:  
+
+1. **Download Godot Engine**  
+   - Visit the official Godot Engine website: [https://godotengine.org](https://godotengine.org).    
+
+2. **Open the Project**  
+   - Launch the Godot Engine.  
+   - Click on "Import" in the Project Manager.  
+   - Navigate to the folder containing this project and select the `project.godot` file.  
+   - Click "Open" to load the project into Godot.
+---
+
 ### Scenario:
 
 _You’re a poor farmer who inherited a large but rundown farm. 
