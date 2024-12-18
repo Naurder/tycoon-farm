@@ -1,3 +1,5 @@
+CPUParticles2D
+GPUParticles2D
 ScrollContainer
 VScrollBar
 Timer
@@ -10,6 +12,3 @@ Label
 TextureRect
 HBoxContainer
 PanelContainer
-CanvasLayer
-TileMapLayer
-Area2D

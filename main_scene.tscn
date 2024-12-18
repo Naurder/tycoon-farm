@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cybf3e0y2shum"]
+[gd_scene load_steps=18 format=4 uid="uid://cybf3e0y2shum"]
 
 [ext_resource type="Texture2D" uid="uid://bls7vx4kbemho" path="res://art/Sheets/Fence.png" id="2_0bxk8"]
 [ext_resource type="Script" path="res://clicking_area.gd" id="2_o11o7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://MoneyLabel.gd" id="5_5cjjf"]
 [ext_resource type="Script" path="res://ShopPanel.gd" id="6_t58lw"]
 [ext_resource type="Texture2D" uid="uid://sjpye38ns6pd" path="res://art/chicken_icon.svg" id="7_7y5ww"]
+[ext_resource type="PackedScene" uid="uid://mthwg2aw2mxs" path="res://CPUParticles2D.tscn" id="10_0jnne"]
 [ext_resource type="Script" path="res://AnimalSpawner.gd" id="10_5jcso"]
 [ext_resource type="Texture2D" uid="uid://uvwtm3a4a3df" path="res://animals/Chicken.tres" id="11_6g56e"]
 
@@ -282,6 +283,8 @@ script = ExtResource("2_o11o7")
 [node name="ClickableArea" type="CollisionShape2D" parent="ClickingArea"]
 position = Vector2(361, 731.5)
 shape = SubResource("RectangleShape2D_5x0qf")
+
+[node name="CPUParticles2D" parent="ClickingArea" instance=ExtResource("10_0jnne")]
 
 [node name="AnimalSpawner" type="Node2D" parent="."]
 script = ExtResource("10_5jcso")
