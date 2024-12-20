@@ -32,7 +32,7 @@ Your dream is to turn it into a thriving paradise.
 | Status     | Description                                            | Achieved in Release   |
 |------------|--------------------------------------------------------|-----------------------|
 | ✅         | Playable: functional & basic play experience.         | v1.0.1                |
-| ❌         | Visually Moderate: aesthetic effects, animations.     | TBD                   |
+| 🔶         | Visually Moderate: aesthetic effects, animations.     | TBD                   |
 | 🔶         | Progress Saving: can be saved and loaded from a file. | TBD                   |
 | ❌         | Game Progression: levels, upgrades, challenges.       | TBD                   |
 | ❌         | DLC Features: Enhancements beyond core mechanics.     | TBD                   |
