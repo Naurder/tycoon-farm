@@ -1,5 +1,18 @@
+# Godot metadata files
+.godot/editor/
+.godot/editor_settings-*.cfg
+.godot/editor_layout.cfg
+.godot/script_editor_cache.cfg
 
-save_data/save_file.dat
+# Godot cache files
+.godot/filesystem_cache*
+.godot/filesystem_update*
+
+# Godot UID cache
+.godot/uid_cache.bin
 
 # Ignore the license file
 docs/LOGO_LICENSE.txt
+
+
+save_data/save_file.dat
