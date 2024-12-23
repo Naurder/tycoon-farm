@@ -40,4 +40,4 @@ Your dream is to turn it into a thriving paradise.
 ---
 ### Current Insight Into Game:
 
-![image](https://github.com/user-attachments/assets/dfa01490-bd7f-4fb6-a400-c65cdf77d79a)
+![image](https://github.com/user-attachments/assets/c2b90dcb-949f-40eb-970b-c53f638e6727)
