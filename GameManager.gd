@@ -23,7 +23,8 @@ func save_money():
 	print("Save_money")
 	var file = FileAccess.open("res://save_data/save_file.dat", FileAccess.WRITE)  # Use user:// path to save in a portable location
 	if file:
-		file.store_var(dollars)
+		file.store_var(50)
+		#file.store_var(dollars)
 		file.close()
 		print("Money saved: " + str(dollars))  # Debugging line
 	else:
@@ -44,6 +45,10 @@ func update_money(amountGained: Variant):
 	emit_signal("money_updated", dollars)  # Emit signal to update money
 
 
+
+
+
+
 #						#########signals###########
 #signal from ClickingArea which gives us 1$
 func _on_clicking_area_money_earned(amount: Variant) -> void:
@@ -51,7 +56,7 @@ func _on_clicking_area_money_earned(amount: Variant) -> void:
 	print("Gained: $", amount)
 
 
-#signal from ShopPanel.gd		bough animal, money reduced
+#signal from ShopPanel.gd		bought animal, money reduced
 func _on_shop_panel_money_updated(new_amount: Variant, animal_ID: Variant, passive_Income: Variant) -> void:
 	update_money(new_amount)
 	passive_income += passive_Income
